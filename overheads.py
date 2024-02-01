@@ -12,7 +12,6 @@ def overhead_function():
     # directory to variable file_path
     file_path = Path.cwd()/"csv_reports"/"Overheads.csv"
     summary_report = Path.cwd()/"summary_report.txt"
-    summary_report.touch()
 
     # Open the file in read mode with UTF-8 encoding and no newline conversion
     with file_path.open(mode = "r",encoding = "UTF-8", newline="") as file:
