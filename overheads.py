@@ -44,7 +44,6 @@ def overhead_function():
             # If the category exists, update the value with the maximum 
             # of the current overhead and the existing value
             overheads_dict[category] = max(overheads_dict[category], overheads)
-
         else:
             # If the category doesn't exist, add a new entry to the 
             # dictionary with the current overhead value
@@ -53,7 +52,7 @@ def overhead_function():
     # Find the highest overhead value from the dictionary values
     highest_number = max(overheads_dict.values())
 
-# Open the summary_report text file with append mode
+    # Open the summary_report text file with append mode
     with summary_report.open(mode="a", encoding = "UTF-8", newline = "") as file_2:
 
     # Iterate through the dictionary items   
