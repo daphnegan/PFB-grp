@@ -53,7 +53,6 @@ def overhead_function():
     # Find the highest overhead value from the dictionary values
     highest_number = max(overheads_dict.values())
 
-
 # Open the summary_report text file with append mode
     with summary_report.open(mode="a", encoding = "UTF-8", newline = "") as file_2:
 
