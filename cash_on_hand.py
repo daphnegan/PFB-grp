@@ -10,7 +10,7 @@ def compute_cash_deficits():
     """
     The function computes cash deficits/surpluses by comparing each day's cash with the previous day's.
     No parameter required.
-    """
+    """ 
 
     # Open the CSV file and read the contents
     with open(input_filename, 'r') as input_file:
