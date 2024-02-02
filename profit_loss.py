@@ -83,7 +83,7 @@ def calculate_profit_deficit():
                 # Sort net profit deficits in descending order by deficit amount
                 deficit_amount_list = sorted(deficit_amount_list, key=get_deficit_amount, reverse=True)
                 highest_deficit = deficit_amount_list[0]
-                output_file.write(f"[HIGHEST PROFIT DEFICIT] DAY: {highest_deficit['day']}, AMOUNT: USD{highest_deficit['amount']}\n")
+                output_file.write(f"[HIGHEST PROFIT DEFICIT] DAY: {highest_deficit['day']}, AMOUNT: SGD{highest_deficit['amount']}\n")
 
             # Check if there are consecutive days with net profit surplus
             elif days_surplus == 79 and surplus_amount_list:
@@ -91,19 +91,19 @@ def calculate_profit_deficit():
                 # Sort net profit deficits in descending order by surplus amount
                 surplus_amount_list = sorted(surplus_amount_list, key=get_surplus_amount, reverse=True)
                 highest_surplus = surplus_amount_list[0]
-                output_file.write(f"[HIGHEST PROFIT SURPLUS] DAY: {highest_surplus['day']}, AMOUNT: USD{highest_surplus['amount']}\n")
+                output_file.write(f"[HIGHEST PROFIT SURPLUS] DAY: {highest_surplus['day']}, AMOUNT: SGD{highest_surplus['amount']}\n")
             
             # If no consecutive days with deficit or surplus, write individual deficit amounts to the output file
             else:
                 for item in def_amount_list:
-                    output_file.write(f"[NET PROFIT DEFICIT] DAY: {item['day']}, AMOUNT: USD{item['amount']}\n")
+                    output_file.write(f"[NET PROFIT DEFICIT] DAY: {item['day']}, AMOUNT: SGD{item['amount']}\n")
 
                 # Sort net profit deficits in descending order by deficit amount
                 def_amount_list = sorted(def_amount_list, key=get_deficit_amount, reverse=True)
 
                 # Write the top 3 deficit amounts to the output file
                 for i in range(min(3, len(def_amount_list))):
-                    output_file.write(f"[{['HIGHEST', '2ND HIGHEST', '3RD HIGHEST'][i]} NET PROFIT DEFICIT] DAY: {def_amount_list[i]['day']}, AMOUNT: USD{def_amount_list[i]['amount']}\n")
+                    output_file.write(f"[{['HIGHEST', '2ND HIGHEST', '3RD HIGHEST'][i]} NET PROFIT DEFICIT] DAY: {def_amount_list[i]['day']}, AMOUNT: SGD{def_amount_list[i]['amount']}\n")
 
 # Custom function for sorting by deficit amount
 def get_deficit_amount(item):

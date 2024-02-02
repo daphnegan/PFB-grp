@@ -72,7 +72,7 @@ def compute_cash_deficits():
             # Sort cash deficits in descending order by deficit amount
             cash_deficits = sorted(cash_deficits, key=get_deficit_amount, reverse=True)
             highest_deficit = cash_deficits[0]
-            output_file.write(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit[0]}, AMOUNT: USD{highest_deficit[1]}\n")
+            output_file.write(f"[HIGHEST CASH DEFICIT] DAY: {highest_deficit[0]}, AMOUNT: SGD{highest_deficit[1]}\n")
 
         # Check if there are consecutive days with cash surplus
         elif days_surplus ==79 and cash_surpluses:
@@ -80,19 +80,19 @@ def compute_cash_deficits():
             # Sort cash deficits in descending order by surplus amount
             cash_surpluses = sorted(cash_surpluses, key=get_surplus_amount, reverse=True)
             highest_surplus = cash_surpluses[0]
-            output_file.write(f"[HIGHEST CASH SURPLUS] DAY: {highest_surplus[0]}, AMOUNT: USD{highest_surplus[1]}\n")
+            output_file.write(f"[HIGHEST CASH SURPLUS] DAY: {highest_surplus[0]}, AMOUNT: SGD{highest_surplus[1]}\n")
         
         # If no consecutive days with deficit or surplus, write individual deficits to the output file
         else:
             for day, amount in cash_def:
-                output_file.write(f"[CASH DEFICIT] DAY: {day}, AMOUNT: USD{amount}\n")
+                output_file.write(f"[CASH DEFICIT] DAY: {day}, AMOUNT: SGD{amount}\n")
                 
             # Sort cash deficits in descending order by deficit amount
             cash_def = sorted(cash_def, key=get_deficit_amount, reverse=True)
 
             # Write the top 3 cash deficits to the output file
             for i in range(min(3, len(cash_def))):
-                output_file.write(f"[{['HIGHEST', '2ND HIGHEST', '3RD HIGHEST'][i]} CASH DEFICIT] DAY: {cash_def[i][0]}, AMOUNT: USD{cash_def[i][1]}\n")
+                output_file.write(f"[{['HIGHEST', '2ND HIGHEST', '3RD HIGHEST'][i]} CASH DEFICIT] DAY: {cash_def[i][0]}, AMOUNT: SGD{cash_def[i][1]}\n")
 
 # Custom function for sorting by deficit/surplus amount
 def get_deficit_amount(item):
